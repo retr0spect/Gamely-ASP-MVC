@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Gamely.Models.Game>
+
+@{
+    ViewBag.Title = "Games";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (!Model.Any())
+{
+    <p>There are no games to rent right now.</p>
+}
+else
+{
+    <h2>Games</h2>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Game</th>
+                <th>Genre</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var game in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(game.Name, "Details", "Games", new {id=game.Id}, null)</td>
+                    <td>@game.Genre</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
