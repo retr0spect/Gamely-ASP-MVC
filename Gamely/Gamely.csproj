@@ -243,15 +243,33 @@
     <Compile Include="Migrations\201701300647062_PopulateGames.Designer.cs">
       <DependentUpon>201701300647062_PopulateGames.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701302339597_RemovedGenreColumnFromGame.cs" />
+    <Compile Include="Migrations\201701302339597_RemovedGenreColumnFromGame.Designer.cs">
+      <DependentUpon>201701302339597_RemovedGenreColumnFromGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701302342123_AddGenreTableAndLinkItToGame.cs" />
+    <Compile Include="Migrations\201701302342123_AddGenreTableAndLinkItToGame.Designer.cs">
+      <DependentUpon>201701302342123_AddGenreTableAndLinkItToGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701302353160_PopulateGenre.cs" />
+    <Compile Include="Migrations\201701302353160_PopulateGenre.Designer.cs">
+      <DependentUpon>201701302353160_PopulateGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701310001248_PopulateGameWithGenreId.cs" />
+    <Compile Include="Migrations\201701310001248_PopulateGameWithGenreId.Designer.cs">
+      <DependentUpon>201701310001248_PopulateGameWithGenreId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\CustomerFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -315,6 +333,7 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Games\Index.cshtml" />
     <Content Include="Views\Games\Details.cshtml" />
+    <Content Include="Views\Customers\CustomerForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -357,6 +376,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701300647062_PopulateGames.resx">
       <DependentUpon>201701300647062_PopulateGames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701302339597_RemovedGenreColumnFromGame.resx">
+      <DependentUpon>201701302339597_RemovedGenreColumnFromGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701302342123_AddGenreTableAndLinkItToGame.resx">
+      <DependentUpon>201701302342123_AddGenreTableAndLinkItToGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701302353160_PopulateGenre.resx">
+      <DependentUpon>201701302353160_PopulateGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701310001248_PopulateGameWithGenreId.resx">
+      <DependentUpon>201701310001248_PopulateGameWithGenreId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

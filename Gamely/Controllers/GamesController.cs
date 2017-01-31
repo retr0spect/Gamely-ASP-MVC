@@ -21,13 +21,13 @@ namespace Gamely.Controllers
         // GET: Game
         public ActionResult Index()
         {
-            var games = _context.Games.ToList();
+            var games = _context.Games.Include(m => m.Genre).ToList();
             return View(games);
         }
 
         public ActionResult Details(int id)
         {
-            var game = _context.Games.SingleOrDefault(c => c.Id == id);
+            var game = _context.Games.Include(m => m.Genre).SingleOrDefault(c => c.Id == id);
             if (game == null)
             {
                 return HttpNotFound();
