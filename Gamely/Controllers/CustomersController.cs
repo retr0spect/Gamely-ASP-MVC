@@ -29,7 +29,9 @@ namespace Gamely.Controllers
 
             var viewModel = new CustomerFormViewModel()
             {
-                MembershipTypes = membershipTypes
+                MembershipTypes = membershipTypes,
+                Customer = new Customer()
+                
             };
 
             return View("CustomerForm", viewModel);

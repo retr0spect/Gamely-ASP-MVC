@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@if (Model.Game == null)
+@if (Model.Game.Id == 0)
 {
     <h2>New Game</h2>
 }

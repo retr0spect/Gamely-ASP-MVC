@@ -44,7 +44,8 @@ namespace Gamely.Controllers
 
             var viewModel = new GameFormViewModel()
             {
-                Genres = genres
+                Genres = genres,
+                Game = new Game()
             };
 
             return View("GameForm", viewModel);
@@ -70,6 +71,10 @@ namespace Gamely.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Game game)
         {
+            var errors = ModelState
+                        .Where(x => x.Value.Errors.Count > 0)
+                        .Select(x => new { x.Key, x.Value.Errors })
+                        .ToArray();
             if (!ModelState.IsValid)
             {
                 var viewModel = new GameFormViewModel()
