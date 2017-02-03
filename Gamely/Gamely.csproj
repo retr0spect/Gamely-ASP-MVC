@@ -259,6 +259,10 @@
     <Compile Include="Migrations\201701310001248_PopulateGameWithGenreId.Designer.cs">
       <DependentUpon>201701310001248_PopulateGameWithGenreId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702030639526_fixDB.cs" />
+    <Compile Include="Migrations\201702030639526_fixDB.Designer.cs">
+      <DependentUpon>201702030639526_fixDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -390,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701310001248_PopulateGameWithGenreId.resx">
       <DependentUpon>201701310001248_PopulateGameWithGenreId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702030639526_fixDB.resx">
+      <DependentUpon>201702030639526_fixDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

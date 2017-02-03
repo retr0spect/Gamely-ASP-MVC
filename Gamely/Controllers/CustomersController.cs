@@ -31,13 +31,23 @@ namespace Gamely.Controllers
             {
                 MembershipTypes = membershipTypes
             };
-            
+
             return View("CustomerForm", viewModel);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new CustomerFormViewModel()
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+                return View("CustomerForm", viewModel);
+            }
             if (customer.Id == 0)
             {
                 _context.Customers.Add(customer);
@@ -50,7 +60,7 @@ namespace Gamely.Controllers
                 customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
                 customerInDb.MembershipTypeId = customer.MembershipTypeId;
             }
-            
+
             _context.SaveChanges();
             return RedirectToAction("Index", "Customers");
         }

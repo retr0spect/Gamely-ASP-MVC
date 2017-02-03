@@ -38,7 +38,6 @@ namespace Gamely.Controllers
 
         }
 
-
         public ActionResult New()
         {
             var genres = _context.Genres.ToList();
@@ -68,8 +67,19 @@ namespace Gamely.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Game game)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new GameFormViewModel()
+                {
+                    Game = game,
+                    Genres = _context.Genres.ToList()
+                };
+                return View("GameForm", viewModel);
+            }
+
             if (game.Id == 0)
             {
                 game.DateAdded = DateTime.Now.ToString("yyyy-MM-dd");
